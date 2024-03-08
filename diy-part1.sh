@@ -43,7 +43,7 @@ CONFIG_MMC_SDHCI=y
 CONFIG_MMC_SDHCI_ACPI=y
 CONFIG_MMC_SDHCI_PCI=y
 CONFIG_DRM_I915=y
-' >> ./target/linux/x86/config-5.15
+# ' >> ./target/linux/x86/config-5.15
 
 # Modify default IP 更改IP地址
 sed -i 's/192.168.1.1/192.168.0.251/g' package/base-files/files/bin/config_generate
