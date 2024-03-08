@@ -11,10 +11,10 @@
 SHELL_FOLDER=$(dirname $(readlink -f "$0"))
 bash $SHELL_FOLDER/../common/kernel_5.15.sh
 
-svn co https://github.com/coolsnowwolf/lede/trunk/target/linux/x86/files target/linux/x86/files
+svn co https://github.com/coolsnowwolf/lede/tree/master/target/linux/x86/files target/linux/x86/files
 rm -rf target/linux/x86/files/.svn
 
-svn co https://github.com/coolsnowwolf/lede/trunk/target/linux/x86/patches-5.15 target/linux/x86/patches-5.15
+svn co https://github.com/coolsnowwolf/lede/tree/master/target/linux/x86/patches-5.15 target/linux/x86/patches-5.15
 rm -rf target/linux/x86/patches-5.15/.svn
 
 curl -sfL https://raw.githubusercontent.com/coolsnowwolf/lede/master/package/kernel/linux/modules/video.mk -o package/kernel/linux/modules/video.mk
