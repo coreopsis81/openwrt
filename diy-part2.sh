@@ -8,10 +8,13 @@
 # Blog: https://p3terx.com
 #============================================================
 
-
+# Modify default IP
+#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 #移除不用软件包
 rm -rf feeds/luci/applications/luci-app-dockerman
+rm -rf feeds/luci/applications/luci-app-wrtbwmon
 rm -rf feeds/packages/net/smartdns
+rm -rf feeds/packages/net/mosdns
 
 #添加额外软件包
 git clone --depth=1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
@@ -25,12 +28,18 @@ cp -rf lucky-repo/lucky package/lucky
 #svn co https://github.com/immortalwrt/immortalwrt/trunk/include
 #svn co https://github.com/immortalwrt/immortalwrt/trunk/scripts
 
+git clone --depth=1 https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
+git clone --depth=1 https://github.com/jerrykuku/luci-app-ttnode.git package/luci-app-ttnode
+git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
 git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone --depth=1 https://github.com/lisaac/luci-app-dockerman.git
 cp -rf luci-app-dockerman/applications/luci-app-dockerman package/luci-app-dockerman
 #rm -rf luci-app-dockerman
 
+git clone --depth=1 https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/luci-app-autoipsetadder
+git clone --depth=1 https://github.com/mchome/openwrt-dogcom.git package/openwrt-dogcom
+git clone --depth=1 https://github.com/mchome/luci-app-dogcom.git package/luci-app-dogcom
 git clone --depth=1 https://github.com/vernesong/OpenClash.git
 cp -rf OpenClash/luci-app-openclash package/luci-app-openclash
 # 编译 po2lmo (如果有po2lmo可跳过)
