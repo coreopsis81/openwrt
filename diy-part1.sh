@@ -28,7 +28,7 @@ sed -i 's/DEFAULT_PACKAGES +=/DEFAULT_PACKAGES += kmod-usb-hid kmod-mmc kmod-sdh
 # mv -f https://github.com/kiddin9/openwrt-packages/tree/master/r81* feeds
 
 sed -i 's,kmod-r8169,kmod-r8168,g' target/linux/x86/image/64.mk
-sed -i 's/256/1024/g' target/linux/x86/image/Makefile
+# sed -i 's/256/1024/g' target/linux/x86/image/Makefile
 
 echo '
 CONFIG_ACPI=y
